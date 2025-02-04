@@ -106,4 +106,5 @@ The GeoJSON file for this project encapsulates both spatial information and oper
 The code generates a mission.json which we give as an input to our UAV and a visualization.json which can be used to visualize the mission's paths and the camera captures for each polygon/parcel.
 To generate a gmplot with the output json simply run:
 `python visualize_fov.py`
-For the current example.json the this commands generate the picture below:
+For the current example.json, this command generates the picture below:
+![Alt Text](visualization_example.png)
