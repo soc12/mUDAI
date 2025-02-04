@@ -107,4 +107,4 @@ The code generates a mission.json which we give as an input to our UAV and a vis
 To generate a gmplot with the output json simply run:
 `python visualize_fov.py`
 For the current example.json, this command generates the picture below:
-![Alt Text](visualization_example.png)
+![Alt Text](vis_example.png)
