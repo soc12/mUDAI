@@ -104,7 +104,16 @@ The GeoJSON file for this project encapsulates both spatial information and oper
 
 ## Visualization
 The code generates a mission.json which we give as an input to our UAV and a visualization.json which can be used to visualize the mission's paths and the camera captures for each polygon/parcel.
-To generate a gmplot with the output json simply run:
-`python visualize_fov.py`
+To generate a gmplot with the output json simply run
+`python visualize_fov.py`.
 For the current example.json, this command generates the picture below:
 ![Alt Text](vis_example.png)
+
+## ChoosePath online platform  
+
+The **ChoosePath** platform is an online tool for multi-UAV mission planning, designed for **inspection operations**. It integrates **Coverage Path Planning (CPP)** for coverage tasks and the **mUDAI** algorithm for the **Fast Inspection of Scattered Regions (FISR)**.  
+
+This repository provides an **open-source Python implementation** of the mUDAI algorithm, offering full customization for advanced users. However, if you prefer a more user-friendly interface, you can also use the **ChoosePath platform** to **generate and visualize flights** using mUDAI, though with fewer customization options compared to this GitHub implementation.  
+
+🔗 **Explore the ChoosePath Platform**: [ChoosePath Platform](https://sites.google.com/view/mudai-platform/)  
+
