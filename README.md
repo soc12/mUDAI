@@ -1,6 +1,9 @@
 # Multi-UAV Disjoint Areas Inspection: An Effective and Efficient Solution to the Fast Inspection of Scattered Regions Problem
 ![Alt Text](graphical_abstract_cropped.jpg)
-
+<div>
+   <a href="https://doi.org/10.5281/zenodo.13866483"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.13866483.svg" alt="Dataset in Zenodo"></a>
+</div>
+<br>
 ## Installation
 
 1. **Clone the repository:**
