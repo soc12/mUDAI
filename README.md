@@ -9,8 +9,8 @@
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/username/my-project.git
-   cd mudai
+   git clone https://github.com/username/mUDAI.git
+   cd mUDAI
 2. **Create your environment:**
    ```bash
    conda env create -f environment.yml
