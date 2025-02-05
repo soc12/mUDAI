@@ -54,18 +54,44 @@ def calculate_flight_duration(data, distance):
 
 
 def get_elevation(latitude, longitude, init_elevation=None, key=None):
-    if key is not None:
-        url = f'https://maps.googleapis.com/maps/api/elevation/json?locations={latitude},{longitude}&key={key}'
-    else:
-        url = f'https://api.open-elevation.com/api/v1/lookup?locations={latitude},{longitude}'
-    response = requests.get(url)
-    data = response.json()
-    elevation = data['results'][0]['elevation']
-    if init_elevation is not None:
-        return elevation - init_elevation, elevation
-    else:
+    try:
+        # Determine the correct API URL based on whether a Google API key is provided
+        if key:
+            url = f'https://maps.googleapis.com/maps/api/elevation/json?locations={latitude},{longitude}&key={key}'
+        else:
+            url = f'https://api.open-elevation.com/api/v1/lookup?locations={latitude},{longitude}'
+        
+        # Make the request
+        response = requests.get(url, timeout=10)  # Added timeout to prevent hanging requests
+        response.raise_for_status()  # Raise an error for HTTP issues (4xx, 5xx)
+
+        # Parse JSON response
+        data = response.json()
+
+        # Check for Google API errors
+        if key and data.get("status") != "OK":
+            raise ValueError(f"Google Elevation API error: {data.get('status')}")
+
+        # Extract elevation data based on the API used
+        if key:
+            elevation = data["results"][0]["elevation"]
+        else:
+            elevation = data["results"][0]["elevation"] if "results" in data else None
+
+        if elevation is None:
+            raise ValueError("Elevation data not found in response.")
+
+        # Return elevation difference if init_elevation is given
+        if init_elevation is not None:
+            return elevation - init_elevation, elevation
         return elevation
 
+    except requests.exceptions.RequestException as req_error:
+        print(f"Request error: {req_error}")
+    except (KeyError, IndexError, ValueError) as parse_error:
+        print(f"Data parsing error: {parse_error}")
+
+    return None  # Return None in case of any failure
 
 def eval_func(x, obj, a):
     xx, y, z, theta = x[0], x[1], x[2], x[3]
