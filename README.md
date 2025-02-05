@@ -9,7 +9,7 @@
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/username/mUDAI.git
+   git clone https://github.com/soc12/mUDAI.git
    cd mUDAI
 2. **Create your environment:**
    ```bash
