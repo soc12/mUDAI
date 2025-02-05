@@ -31,7 +31,10 @@ def generate_fov_map(viz_file='visualization_local.json', mission_file='mission.
 
     first_point = viz_data['paths'][0]['points'][0]
     initial_latitude, initial_longitude = first_point['lat'], first_point['lng']
-    map_plotter = gmplot.GoogleMapPlotter(initial_latitude, initial_longitude, 18, map_type='satellite', apikey=api_key)
+    if api_key is not None:
+    	map_plotter = gmplot.GoogleMapPlotter(initial_latitude, initial_longitude, 18, map_type='satellite', apikey=api_key)
+    else:
+    	map_plotter = gmplot.GoogleMapPlotter(initial_latitude, initial_longitude, 18, map_type='satellite')
 
     # Add Clickable Polygons
     for feature_type, color, width in [('polygons', 'red', 2), ('fov', 'blue', 5)]:
