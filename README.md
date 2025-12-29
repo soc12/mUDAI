@@ -121,3 +121,17 @@ This repository provides an **open-source Python implementation** of the mUDAI a
 
 🔗 **Explore the ChoosePath Platform**: [ChoosePath Platform](https://sites.google.com/view/mudai-platform/)  
 
+## Cite as:
+ 
+*Gkelios, S., Apostolidis, S. D., Kapoutsis, P. C., Kosmatopoulos, E. B., & Kapoutsis, A. C. (2026). Beyond coverage path planning: Can UAV swarms perfect scattered regions inspections? Robotics and Autonomous Systems, 197.*
+  \[[Link](https://www.sciencedirect.com/science/article/pii/S092188902500394X)\]
+  ```bibtex
+@article{gkelios2026beyond,
+  title={Beyond coverage path planning: Can UAV swarms perfect scattered regions inspections?},
+  author={Gkelios, Socratis and Apostolidis, Savvas D and Kapoutsis, Pavlos Ch and Kosmatopoulos, Elias B and Kapoutsis, Athanasios Ch},
+  journal={Robotics and Autonomous Systems},
+  volume={197},
+  pages={105297},
+  year={2026},
+  publisher={Elsevier}
+}
